@@ -1,0 +1,5 @@
+version: "1"
+rules:
+  - base: upstream
+    upstream: astrovm:master # change `wei` to the owner of upstream repo
+    mergeMethod: rebase
