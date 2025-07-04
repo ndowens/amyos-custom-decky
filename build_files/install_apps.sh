@@ -59,9 +59,7 @@ declare -A RPM_PACKAGES=(
   ["copr:sneexy/zen-browser"]="zen-browser"
   ["copr:bieszczaders/kernel-cachyos-lto"]="\
 	  akmods \
-	  kernel-cachyos-lto \
-	  kernel-cachyos-lto-devel-matched
-	  "
+  	  kernel-cachyos-lto{,-core,-devel-matched,-modules}"
   ["copr:bieszczaders/kernel-cachyos-addons"]="uksmd"
 )
 
@@ -103,9 +101,11 @@ for recipe in "install-coolercontrol" "install-openrgb"; do
 done
 
 
+dnf5 -y copr enable bieszczaders/kernel-cachyos-lto
+rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-lto
+
 #cachyos SElinux
 setsebool -P domain_kernel_load_modules on
 
-dnf5 -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra
 
 log "Build process completed"
