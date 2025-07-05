@@ -59,7 +59,8 @@ declare -A RPM_PACKAGES=(
   ["copr:sneexy/zen-browser"]="zen-browser"
   ["copr:bieszczaders/kernel-cachyos-lto"]="\
 	  akmods \
-  	  kernel-cachyos-lto{,-core,-devel-matched}"
+  	  kernel-cachyos-lto \
+          kernel-cachyos-lto-devel-matched"
   ["copr:bieszczaders/kernel-cachyos-addons"]="uksmd"
 )
 
