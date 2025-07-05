@@ -11,7 +11,6 @@ log "Building initramfs"
 
 # Get kernel version and build initramfs
 KERNEL_VERSION="$(dnf5 repoquery --installed --queryformat='%{evr}.%{arch}' kernel)"
-for i in $KERNEL_VERSION; do
 /usr/bin/dracut \
   --no-hostonly \
   --kver "$KERNEL_VERSION" \
@@ -22,5 +21,5 @@ for i in $KERNEL_VERSION; do
   -f "/usr/lib/modules/$KERNEL_VERSION/initramfs.img"
 
 chmod 0600 "/usr/lib/modules/$KERNEL_VERSION/initramfs.img"
-done
+
 log "Build completed"
