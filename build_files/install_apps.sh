@@ -75,7 +75,7 @@ for repo in "${!RPM_PACKAGES[@]}"; do
     copr_repo=${repo#copr:}
     dnf5 -y copr enable "$copr_repo"
     dnf5 -y install "${pkg_array[@]}"
-    dnf5 -y copr disable "$copr_repo"
+    #dnf5 -y copr disable "$copr_repo"
   else
     # Handle regular packages
     [[ $repo != "fedora" ]] && enable_opt="--enable-repo=$repo" || enable_opt=""
@@ -103,6 +103,6 @@ done
 
 #cachyos SElinux
 setsebool -P domain_kernel_load_modules on
-
+rpm-ostree override remove kernel kernel-core kmod-ayaneo-platform kmod-zenergy kmod-xone zenergy kernel-modules kernel-modules-core kernel-modules-extra kernel-devel-matched --install kernel-cachyos-lto-devel-matched kernel-cachyos-lto-modules kernel-cachyos-lto-core
 
 log "Build process completed"
