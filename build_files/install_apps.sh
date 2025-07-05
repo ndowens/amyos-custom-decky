@@ -30,11 +30,11 @@ declare -A RPM_PACKAGES=(
     procps-ng-devel \
     neovim \
     qemu-kvm \
+    scx-scheds \
     thefuck \
     util-linux \
     virt-manager \
     virt-viewer \
-    yt-dlp \
     zsh-autosuggestions \
     zsh"
 
@@ -57,8 +57,13 @@ declare -A RPM_PACKAGES=(
 
   ["cloudflare-warp"]="cloudflare-warp"
   ["copr:sneexy/zen-browser"]="zen-browser"
+  ["copr:bieszczaders/kernel-cachyos-lto"]="\
+	  akmods"
 )
 
+dnf5 -y remove akmods kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-devel-matched
+dnf5 -y install akmods kernel-cachyos-lto kernel-cachyos-lto-modules kernel-cachyos-lto-core \
+	kernel-cachyos-lto-devel-matched
 
 log "Starting Amy OS build process"
 log "Installing RPM packages"
