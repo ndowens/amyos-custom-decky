@@ -1,4 +1,4 @@
-```Custom version of: with CachyOS kernel```
+# Custom version of: with CachyOS kernel
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/astrovm/amyos/refs/heads/main/repo_files/amy-logo-black.png">
