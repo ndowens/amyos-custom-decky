@@ -14,6 +14,7 @@ mkdir /nix
 declare -A RPM_PACKAGES=(
   ["fedora"]="\
     aria2 \
+    bazaar
     bchunk \
     fuse-btfs \
     fuse-devel \
@@ -24,6 +25,7 @@ declare -A RPM_PACKAGES=(
     keepassxc \
     kcalc \
     ksystemlog \
+    krunner-bazaar
     libcap-ng \
     libcap-ng-devel \
     procps-ng \
