@@ -13,3 +13,4 @@ dnf5 -y install akmods kernel-cachyos-lto kernel-cachyos-lto-modules kernel-cach
 	kernel-cachyos-lto-devel-matched
  
 dnf5 -y copr disable bieszczaders/kernel-cachyos-lto
+setsebool -P domain_kernel_load_modules on
