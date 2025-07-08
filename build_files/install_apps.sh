@@ -97,5 +97,5 @@ for recipe in "install-coolercontrol" "install-openrgb"; do
   fi
   sed -i "s/^$recipe:/_$recipe:/" /usr/share/ublue-os/just/*.just
 done
-
+dnf5 -y upgrade --refresh
 log "Build process completed"
