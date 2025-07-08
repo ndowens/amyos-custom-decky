@@ -13,7 +13,6 @@ mkdir /nix
 # RPM packages list
 declare -A RPM_PACKAGES=(
   ["fedora"]="\
-    aria2 \
     bazaar \
     bchunk \
     fuse-btfs \
@@ -60,6 +59,8 @@ declare -A RPM_PACKAGES=(
   ["cloudflare-warp"]="cloudflare-warp"
   ["copr:sneexy/zen-browser"]="zen-browser"
 )
+log "Remove waydroid"
+dnf5 -y remove waydroid waydroid-selinux
 
 log "Starting Amy OS build process"
 log "Installing RPM packages"
