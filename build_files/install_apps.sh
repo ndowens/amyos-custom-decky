@@ -25,7 +25,7 @@ declare -A RPM_PACKAGES=(
     keepassxc \
     kcalc \
     ksystemlog \
-    krunner-bazaar
+    krunner-bazaar \
     libcap-ng \
     libcap-ng-devel \
     procps-ng \
