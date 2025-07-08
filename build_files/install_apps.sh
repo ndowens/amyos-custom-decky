@@ -14,7 +14,7 @@ mkdir /nix
 declare -A RPM_PACKAGES=(
   ["fedora"]="\
     aria2 \
-    bazaar
+    bazaar \
     bchunk \
     fuse-btfs \
     fuse-devel \
