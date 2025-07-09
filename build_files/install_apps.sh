@@ -71,7 +71,7 @@ for repo in "${!RPM_PACKAGES[@]}"; do
     # Handle COPR packages
     copr_repo=${repo#copr:}
     dnf5 -y copr enable "$copr_repo"
-    dnf5 -y install "${pkg_array[@]}"
+    dnf5 -y install "${pkg_array[@]}" --refresh
     dnf5 -y copr disable "$copr_repo"
   else
     # Handle regular packages
@@ -97,5 +97,5 @@ for recipe in "install-coolercontrol" "install-openrgb"; do
   fi
   sed -i "s/^$recipe:/_$recipe:/" /usr/share/ublue-os/just/*.just
 done
-dnf5 -y upgrade --refresh
+
 log "Build process completed"
