@@ -58,7 +58,8 @@ declare -A RPM_PACKAGES=(
 
   ["cloudflare-warp"]="cloudflare-warp"
   ["copr:sneexy/zen-browser"]="zen-browser"
-)
+  ["vscode"]="code"
+ )
 log "Remove waydroid"
 dnf5 -y remove waydroid waydroid-selinux
 

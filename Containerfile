@@ -9,7 +9,9 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
   --mount=type=cache,dst=/var/log \
   --mount=type=tmpfs,dst=/tmp \
   /ctx/install_apps.sh && \
+  /ctx/hyprland.sh && \
   /ctx/cachyos-kernel.sh && \
+  /ctx/snapd.sh && \
   /ctx/fix-opt.sh && \
   /ctx/snapd.sh && \
   /ctx/build-initramfs.sh && \
