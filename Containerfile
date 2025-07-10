@@ -11,5 +11,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
   /ctx/install_apps.sh && \
   /ctx/cachyos-kernel.sh && \
   /ctx/fix-opt.sh && \
+  /ctx/snapd.sh && \
   /ctx/build-initramfs.sh && \
   /ctx/cleanup.sh
