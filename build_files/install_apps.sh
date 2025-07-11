@@ -41,6 +41,7 @@ declare -A RPM_PACKAGES=(
 
   ["terra"]="\
     hack-nerd-fonts \
+    legcord \
     ubuntu-nerd-fonts \
     ubuntumono-nerd-fonts \
     ubuntusans-nerd-fonts"

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-RELEASE="$(rpm -E %fedora)"
 set -ouex pipefail
 
 enable_copr() {
