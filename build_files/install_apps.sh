@@ -91,8 +91,8 @@ for repo in "${!RPM_PACKAGES[@]}"; do
   fi
 done
 
-log "Run k3s installer"
-k3s-install
+#log "Run k3s installer"
+#k3s-install
 
 log "Enabling system services"
 systemctl enable podman.socket libvirtd.service
