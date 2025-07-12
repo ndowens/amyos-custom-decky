@@ -16,6 +16,7 @@ declare -A RPM_PACKAGES=(
     bazaar \
     bchunk \
     conntrack-tools \
+    cri-tools \
     fuse-btfs \
     fuse-devel \
     fuse3-devel \
