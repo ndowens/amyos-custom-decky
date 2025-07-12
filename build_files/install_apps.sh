@@ -60,6 +60,12 @@ declare -A RPM_PACKAGES=(
   ["cloudflare-warp"]="cloudflare-warp"
   ["copr:sneexy/zen-browser"]="zen-browser"
   ["vscode"]="code"
+  ["ndowens"]="\
+	  minikube \
+	  minikube-fish-completion \
+	  kompose \
+	  k3s-install \
+	  k3s-selinux"
  )
 log "Remove waydroid"
 dnf5 -y remove waydroid waydroid-selinux
@@ -84,6 +90,9 @@ for repo in "${!RPM_PACKAGES[@]}"; do
     "${cmd[@]}"
   fi
 done
+
+log "Run k3s installer"
+k3s-install
 
 log "Enabling system services"
 systemctl enable podman.socket libvirtd.service
