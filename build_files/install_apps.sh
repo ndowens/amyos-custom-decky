@@ -65,9 +65,7 @@ declare -A RPM_PACKAGES=(
   ["ndowens"]="\
 	  minikube \
 	  minikube-fish-completion \
-	  kompose \
-	  k3s-install \
-	  k3s-selinux"
+	  kompose"
  )
 log "Remove waydroid"
 dnf5 -y remove waydroid waydroid-selinux
