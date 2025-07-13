@@ -22,7 +22,6 @@ declare -A RPM_PACKAGES=(
     bchunk \
     containernetworking-plugins \
     conntrack-tools \
-    cri-tools \
     fuse-btfs \
     fuse-devel \
     fuse3-devel \
@@ -31,6 +30,7 @@ declare -A RPM_PACKAGES=(
     gwenview \
     keepassxc \
     kcalc \
+    kubernetes1.33-kubeadm \
     ksystemlog \
     krunner-bazaar \
     libcap-ng \
