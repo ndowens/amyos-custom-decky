@@ -91,8 +91,9 @@ for repo in "${!RPM_PACKAGES[@]}"; do
   fi
 done
 
-#log "Run k3s installer"
-#k3s-install
+log "Install cri-dockerd"
+mkdir /var/lib/cri-dockerd
+install -Dm755 cri-dockerd /usr/bin/
 
 log "Enabling system services"
 systemctl enable podman.socket libvirtd.service
