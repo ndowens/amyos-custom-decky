@@ -70,6 +70,7 @@ declare -A RPM_PACKAGES=(
 	  minikube \
 	  minikube-fish-completion \
 	  kompose"
+  ["cloudflared"]="cloudflared"
  )
 log "Remove waydroid"
 dnf5 -y remove waydroid waydroid-selinux
