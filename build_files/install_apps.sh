@@ -10,6 +10,10 @@ log() {
 # Workaround to allow installing nix with composefs
 mkdir /nix
 
+log "Install cri-dockerd"
+mkdir -p /var/lib/cri-dockerd
+install -Dm755 /ctx/cri-dockerd /usr/bin/
+
 # RPM packages list
 declare -A RPM_PACKAGES=(
   ["fedora"]="\
@@ -90,10 +94,6 @@ for repo in "${!RPM_PACKAGES[@]}"; do
     "${cmd[@]}"
   fi
 done
-
-log "Install cri-dockerd"
-mkdir /var/lib/cri-dockerd
-install -Dm755 cri-dockerd /usr/bin/
 
 log "Enabling system services"
 systemctl enable podman.socket libvirtd.service
