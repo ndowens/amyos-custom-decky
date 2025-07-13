@@ -13,6 +13,7 @@ mkdir /nix
 log "Install cri-dockerd"
 mkdir -p /var/lib/cri-dockerd
 install -Dm755 /ctx/cri-dockerd /usr/bin/
+mkdir -p /usr/share/ca-certificates
 
 # RPM packages list
 declare -A RPM_PACKAGES=(
