@@ -19,6 +19,7 @@ declare -A RPM_PACKAGES=(
   ["fedora"]="\
     bazaar \
     bchunk \
+    containernetworking-plugins \
     conntrack-tools \
     cri-tools \
     fuse-btfs \
