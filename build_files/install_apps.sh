@@ -10,18 +10,11 @@ log() {
 # Workaround to allow installing nix with composefs
 mkdir /nix
 
-log "Install cri-dockerd"
-mkdir -p /var/lib/cri-dockerd
-install -Dm755 /ctx/cri-dockerd /usr/bin/
-mkdir -p /usr/share/ca-certificates
-
 # RPM packages list
 declare -A RPM_PACKAGES=(
   ["fedora"]="\
     bazaar \
     bchunk \
-    containernetworking-plugins \
-    conntrack-tools \
     fuse-btfs \
     fuse-devel \
     fuse3-devel \
@@ -30,7 +23,6 @@ declare -A RPM_PACKAGES=(
     gwenview \
     keepassxc \
     kcalc \
-    kubernetes1.33-kubeadm \
     ksystemlog \
     krunner-bazaar \
     libcap-ng \
@@ -49,7 +41,6 @@ declare -A RPM_PACKAGES=(
 
   ["terra"]="\
     hack-nerd-fonts \
-    legcord \
     ubuntu-nerd-fonts \
     ubuntumono-nerd-fonts \
     ubuntusans-nerd-fonts"
@@ -68,10 +59,6 @@ declare -A RPM_PACKAGES=(
   ["cloudflare-warp"]="cloudflare-warp"
   ["copr:sneexy/zen-browser"]="zen-browser"
   ["vscode"]="code"
-  ["ndowens"]="\
-	  minikube \
-	  minikube-fish-completion \
-	  kompose"
   ["cloudflared"]="cloudflared"
  )
 log "Remove waydroid"
