@@ -1,7 +1,7 @@
 FROM scratch AS ctx
 COPY build_files /
 
-FROM ghcr.io/ublue-os/bazzite:42 as amyos
+FROM ghcr.io/ublue-os/bazzite-decky:42 as amyos
 COPY system_files /
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
@@ -11,8 +11,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
   /ctx/install_apps.sh && \
   #/ctx/hyprland.sh && \
   /ctx/cachyos-kernel.sh && \
-  /ctx/snapd.sh && \
+#  /ctx/snapd.sh && \
   /ctx/fix-opt.sh && \
-  /ctx/snapd.sh && \
   /ctx/build-initramfs.sh && \
   /ctx/cleanup.sh
